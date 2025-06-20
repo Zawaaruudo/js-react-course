@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function ProductDetails ({ item, price, discount, imageSrc }) {
+        return (
+          <div>
+            <img src={imageSrc} width="150" />
+            <p>{item}</p>
+            { discount ? (
+              <>
+              <p><del>Price: ${price}</del></p>
+              <p>Discount price: ${discount}</p>
+              </>
+            ) : (
+              <p>Price: ${price}</p>
+            )}
+            <button>Add to Cart</button>
+          </div>
+        );
+      }
+      function App () {
+        return (
+          <>
+          <ProductDetails 
+          item = "Cotton socks" 
+          price = "10.90" 
+          discount="5.45"
+          imageSrc="/cotton-socks.png" 
+          />
+          <ProductDetails 
+          item = "Tenis balls" 
+          price = "6.00" 
+          imageSrc="/tennis-balls.png" 
+          />
+          <ProductDetails 
+          item = "Plain T-shirt" 
+          price = "7.99" 
+          imageSrc="/plain-t-shirt.png" 
+          />
+          </>
+        );
+      }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html> 

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <div class="js-div2"></div>
+    
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+
+    <script src=""></script>
+
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <link rel="stylesheet" href="react-basics.css" />
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+      const Clock = () => {
+        const [currentTime, setCurrentTime] = useState(dayjs().format('HH:mm:ss'));
+
+        useEffect(() => {
+          const interval = setInterval(() => {
+            setCurrentTime(dayjs().format('HH:mm:ss'));
+          }, 1000); 
+          return () => clearInterval(interval); 
+        }, []);
+
+        return <p class="clock">Current Time: {currentTime}</p>;
+      };
+      const date = dayjs().format('MMMM D');
+      const currentTime = dayjs().format('HH:mm:ss');
+      const productCost = 10 + 8 * 2;
+      const shippingCost = 5;
+      const div = (
+        <div>
+          <p>Product Cost: ${productCost}</p>
+          <p>Shipping Cost: ${shippingCost}</p>
+          <p>Total Cost: ${productCost + shippingCost}</p>
+          <p class="date">Today is {date}</p>
+          <Clock/>
+          <button>Place your order</button>
+        </div>
+      );
+      const container = document.querySelector('.js-container');
+      const root = ReactDOM.createRoot(container);
+      root.render(<Clock />);
+      root.render(div);
+    </script>
+  </body>
+</html> 
