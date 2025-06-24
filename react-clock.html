@@ -8,33 +8,26 @@
     
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
-
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    <link rel="stylesheet" href="react-basics.css" />
     <script type="text/babel">
       function App () {
+        const [ time, setTime ] = 
+        React.useState(dayjs().format('HH:mm:ss'));
+
+        React.useEffect(() => {
+          setInterval(() => {
+            setTime(dayjs().format('HH:mm:ss'));
+            console.log('run code');
+          }, 1000);
+        }, []);
+        // Important: make sure to give React.useEffect()
+        // a dependency array of [] so it only runs once!
         return (
-          <>
-          <p>Hello and welcome to my website</p>
-          <LoginForm />
-          </>
+          <p className="clock">Current Time: {time}</p>
         );
       }
-      function LoginForm () {
-        return (
-          <>
-            <div>
-              <input placeholder="Email"></input>
-            </div>
-            <div>
-              <input type="password" 
-              placeholder="Password">
-              </input>
-            </div>
-          <button>Login</button>
-          <button>Sign up</button>
-          </>
-        );
-      } 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
     </script>
