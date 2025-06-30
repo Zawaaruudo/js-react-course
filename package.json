@@ -1,0 +1,29 @@
+{
+  "name": "js-react-course",
+  "version": "1.0.0",
+  "main": "react-basics.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zawaaruudo/js-react-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zawaaruudo/js-react-course/issues"
+  },
+  "homepage": "https://github.com/Zawaaruudo/js-react-course#readme",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.2.0"
+  },
+  "dependencies": {
+    "supersimpledev": "^8.6.2"
+  }
+}
