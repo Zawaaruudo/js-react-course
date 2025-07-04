@@ -13,9 +13,11 @@ export function Header({ cart }) {
     <>
       <div className="header">
         <div className="left-section">
-          <NavLink to="/" className="header-link">
+          <NavLink to="/" className="return-to-home-link">
             <img className="logo"
               src={LogoWhite} />
+          </NavLink>
+          <NavLink to="/" className="return-to-home-link">
             <img className="mobile-logo"
               src={MobileLogoWhite} />
           </NavLink>
