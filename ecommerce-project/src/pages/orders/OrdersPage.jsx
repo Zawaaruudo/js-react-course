@@ -3,16 +3,17 @@ import { Link } from 'react-router';
 import axios from 'axios'
 import { formatMoney } from '../../../utils/money';
 import { useState, useEffect, Fragment } from 'react';
-import BuyAgainIcon from '../assets/images/icons/buy-again.png'
+import BuyAgainIcon from '../../assets/images/icons/buy-again.png'
 import dayjs from 'dayjs';
 import './OrdersPage.css'
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    axios.get('/api/orders?expand=products')
-      .then((response) => {
-        setOrders(response.data);
-      });
+    const fetchOrdersData = async () => {
+      const response = await axios.get('/api/orders?expand=products')
+      setOrders(response.data);
+    }
+    fetchOrdersData();
   }, []);
   return (
     <>
