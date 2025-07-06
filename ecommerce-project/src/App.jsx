@@ -1,4 +1,4 @@
-import { HomePage } from './pages/HomePage'
+import { HomePage } from '../src/pages/home/HomePage'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { CheckoutPage } from './pages/checkout/CheckoutPage'
