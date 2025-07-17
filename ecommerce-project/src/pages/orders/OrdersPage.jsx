@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react';
 import './OrdersPage.css'
 import { OrdersGrid } from './OrdersGrid';
-export function OrdersPage({ cart }) {
+export function OrdersPage({ cart, loadCart }) {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fetchOrdersData = async () => {
@@ -16,11 +16,11 @@ export function OrdersPage({ cart }) {
     <>
       <title>Orders</title>
       <link rel="icon" type="image/svg+xml" href="orders-favicon.png" />
-      <Header cart={cart} />
+      <Header cart={cart} loadCart={loadCart} />
 
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
-        <OrdersGrid orders={orders} />
+        <OrdersGrid orders={orders} loadCart={loadCart} />
       </div>
     </>
   );
