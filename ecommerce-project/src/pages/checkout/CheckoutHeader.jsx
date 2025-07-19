@@ -3,7 +3,7 @@ import CheckoutLockIcon from '../../assets/images/icons/checkout-lock-icon.png'
 import Logo from '../../assets/images/logo.png'
 import MobileLogo from '../../assets/images/mobile-logo.png'
 import { NavLink } from 'react-router';
-export function CheckoutHeader({ orderProduct }) {
+export function CheckoutHeader() {
   return (
     <div className="checkout-header">
       <div className="header-content">
@@ -15,7 +15,7 @@ export function CheckoutHeader({ orderProduct }) {
         </div>
 
         <div className="checkout-header-middle-section">
-          Checkout () items
+          Checkout (1) item
         </div>
 
         <div className="checkout-header-right-section">
