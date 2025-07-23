@@ -46,7 +46,8 @@ export function Product({ product, loadCart }) {
         {formatMoney(product.priceCents)}
       </div>
 
-      <div className="product-quantity-container">
+      <div className="product-quantity-container"
+        data-testid="product-quantity-container">
         <select value={quantity}
           onChange={selectQuantity}>
           <option value="1">1</option>
