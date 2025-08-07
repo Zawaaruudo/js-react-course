@@ -1,4 +1,4 @@
-import { formatMoney } from "../../../utils/money";
+import { formatMoney } from "../../utils/money";
 import { useState } from "react";
 import axios from "axios";
 export function CartItemDetails({ cartItem, loadCart }) {

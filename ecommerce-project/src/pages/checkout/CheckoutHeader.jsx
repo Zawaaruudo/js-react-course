@@ -1,7 +1,7 @@
 import '../checkout/CheckoutHeader.css'
-import CheckoutLockIcon from '../../assets/images/icons/checkout-lock-icon.png'
-import Logo from '../../assets/images/logo.png'
-import MobileLogo from '../../assets/images/mobile-logo.png'
+import CheckoutLockIcon from '../../../public/images/icons/checkout-lock-icon.png';
+import Logo from '../../../public/images/logo.png'
+import MobileLogo from '../../../public/images/mobile-logo.png'
 import { NavLink } from 'react-router';
 export function CheckoutHeader({ paymentSummary }) {
   return (

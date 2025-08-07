@@ -1,7 +1,7 @@
-import { formatMoney } from "../../../utils/money";
+import { formatMoney } from "../../utils/money";
 import { useState } from "react";
 import axios from "axios";
-import CheckmarkGreen from '../../assets/images/icons/checkmark.png'
+import CheckmarkGreen from '../../../public/images/icons/checkmark.png';
 export function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
   const [showAddedToCart, setShowAddedToCart] = useState(false);

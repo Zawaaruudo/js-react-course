@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { formatMoney } from "../../../utils/money";
+import { formatMoney } from "./../../utils/money";
 export function OrderHeader({ order }) {
   return (
     <div className="order-header">
