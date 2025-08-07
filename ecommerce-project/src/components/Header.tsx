@@ -5,7 +5,15 @@ import SearchIcon from '../../public/images/icons/search-icon.png';
 import LogoWhite from '../../public//images/logo-white.png';
 import MobileLogoWhite from '../../public/images/mobile-logo-white.png'
 import './Headerr.css'
-export function Header({ cart }) {
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliveryOptionId: string;
+  }[];
+
+};
+export function Header({ cart }: HeaderProps) {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const searchText = searchParams.get('search');
